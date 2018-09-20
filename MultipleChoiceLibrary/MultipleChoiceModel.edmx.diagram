@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c8d8d146bf8e4397b29dd8a80e5e02fb" Name="Diagram1">
+        <EntityTypeShape EntityType="MultipleChoiceModel.Answer" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultipleChoiceModel.Question" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MultipleChoiceModel.User" Width="1.5" PointX="7.625" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="MultipleChoiceModel.FK__Answer__Question__36D11DD4" ManuallyRouted="false" />
+        <AssociationConnector Association="MultipleChoiceModel.FK__Answer__User_ID__37C5420D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MultipleChoiceModel.Mark" Width="1.5" PointX="4.625" PointY="5.125" />
+        <AssociationConnector Association="MultipleChoiceModel.FK__Mark__User_ID__6319B466" />
+        <EntityTypeShape EntityType="MultipleChoiceModel.Test" Width="1.5" PointX="0.75" PointY="1.375" />
+        <AssociationConnector Association="MultipleChoiceModel.FK__Mark__Test_ID__25DB9BFC" />
+        <AssociationConnector Association="MultipleChoiceModel.FK__Question__Test_I__1E3A7A34" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

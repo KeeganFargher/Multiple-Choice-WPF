@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipleChoiceLibrary", "MultipleChoiceLibrary\MultipleChoiceLibrary.csproj", "{A4EA63F4-AA2D-4852-ACCE-5A87EA5CAE31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipleChoiceUI", "MultipleChoiceUI\MultipleChoiceUI.csproj", "{0311B4BE-E09C-46EF-B269-FC2C6814559E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4EA63F4-AA2D-4852-ACCE-5A87EA5CAE31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4EA63F4-AA2D-4852-ACCE-5A87EA5CAE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4EA63F4-AA2D-4852-ACCE-5A87EA5CAE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4EA63F4-AA2D-4852-ACCE-5A87EA5CAE31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0311B4BE-E09C-46EF-B269-FC2C6814559E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0311B4BE-E09C-46EF-B269-FC2C6814559E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0311B4BE-E09C-46EF-B269-FC2C6814559E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0311B4BE-E09C-46EF-B269-FC2C6814559E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0992F854-35EB-4376-878B-9962AC999218}
+	EndGlobalSection
+EndGlobal

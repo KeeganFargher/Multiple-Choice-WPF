@@ -1,0 +1,159 @@
+﻿<UserControl x:Class="MultipleChoiceUI.User_Controls.MemoUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MultipleChoiceUI"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="16"
+             TextOptions.TextFormattingMode="Ideal" 
+             TextOptions.TextRenderingMode="Auto"        
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="550">
+    <Grid>
+        <materialDesign:Card Background="{DynamicResource MaterialDesignDarkSeparatorBackground}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <!-- QUESTION TEXT -->
+                <Grid
+                    Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        x:Name="QuestionNumber"
+                        Grid.Row="1"
+                        VerticalAlignment="Center"
+                        Margin="10 10 0 0"
+                        Style="{DynamicResource MaterialDesignBody1TextBlock}">
+                        Question 1
+                    </TextBlock>
+
+                    <TextBlock
+                        x:Name="Points"
+                        Grid.Row="2"
+                        VerticalAlignment="Center"
+                        Margin="10 0 0 0"
+                        Style="{DynamicResource MaterialDesignBody1TextBlock}">
+                        Points 5
+                    </TextBlock>
+
+                    <TextBlock
+                        x:Name="Question"
+                        Grid.Row="3"
+                        VerticalAlignment="Center"
+                        Margin="10 0 0 0"
+                        Style="{DynamicResource MaterialDesignTitleTextBlock}">
+                        What type of software manages an inventory system?
+                    </TextBlock>
+                </Grid>
+
+                <!-- CHOICES -->
+                <Border
+                    Grid.Row="2"
+                    BorderThickness="0 0 0 0"
+                    BorderBrush="{DynamicResource PrimaryHueMidBrush}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            x:Name="ChoiceA"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            Margin="10"
+                            Height="30"
+                            Padding="5 8 0 0"
+                            Style="{DynamicResource MaterialDesignBody1TextBlock}">
+                            A. Communications software
+                        </TextBlock>
+
+                        <TextBlock
+                            x:Name="ChoiceB"
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            VerticalAlignment="Center"
+                            Margin="10"
+                            Height="30"
+                            Padding="5 8 0 0"
+                            Style="{DynamicResource MaterialDesignBody1TextBlock}">
+                            B. System software
+                        </TextBlock>
+
+                        <TextBlock
+                            x:Name="ChoiceC"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            Margin="10"
+                            Height="30"
+                            Padding="5 8 0 0"
+                            Style="{DynamicResource MaterialDesignBody1TextBlock}">
+                            C. Accounting software
+                        </TextBlock>
+
+                        <TextBlock
+                            x:Name="ChoiceD"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            VerticalAlignment="Center"
+                            Margin="10"
+                            Height="30"
+                            Padding="5 8 0 0"
+                            Style="{DynamicResource MaterialDesignBody1TextBlock}">
+                            D. Database software
+                        </TextBlock>
+                    </Grid>
+                </Border>
+
+                <!-- Correct Answer -->
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="1"
+                        VerticalAlignment="Center"
+                        Style="{DynamicResource MaterialDesignBody1TextBlock}"
+                        Margin="10 5 0 0">
+                        Correct Answer
+                    </TextBlock>
+
+                    <TextBlock
+                        Grid.Row="2"
+                        x:Name="CorrectAnswer"
+                        VerticalAlignment="Center"
+                        Style="{DynamicResource MaterialDesignBody2TextBlock}"
+                        Margin="10 0 0 5">
+                        A. Communications Software
+                    </TextBlock>
+                </Grid>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>

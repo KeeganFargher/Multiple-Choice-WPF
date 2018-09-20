@@ -1,0 +1,197 @@
+﻿<Window x:Class="MultipleChoiceUI.EditQuestionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MultipleChoiceUI"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="16"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="Edit Question" Height="470" Width="650" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" WindowStyle="None" BorderThickness="2" BorderBrush="{DynamicResource PrimaryHueLightBrush}" Closing="EditQuestionWindow_OnClosing">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Question Text -->
+        <TextBlock
+            Grid.Row="1" Grid.Column="1"
+            Style="{DynamicResource MaterialDesignTitleTextBlock}"
+            HorizontalAlignment="Right"
+            Margin="0 0 20 0">
+        Question
+        </TextBlock>
+
+        <!-- Choices -->
+        <TextBlock
+            Grid.Row="2" Grid.Column="1"
+            Style="{DynamicResource MaterialDesignTitleTextBlock}"
+            HorizontalAlignment="Right"
+            Margin="0 0 20 0">
+            Choices
+        </TextBlock>
+
+        <!-- Points -->
+        <TextBlock
+            Grid.Row="3" Grid.Column="1"
+            Style="{DynamicResource MaterialDesignTitleTextBlock}"
+            HorizontalAlignment="Right"
+            Margin="0 20 20 0">
+            Points
+        </TextBlock>
+
+        <!-- QUESTION TEXT -->
+        <TextBox
+            x:Name="QuestionText"
+            Grid.Row="1" Grid.Column="2"
+            Style="{StaticResource MaterialDesignTextFieldBoxTextBox}"
+            Margin="0 0 0 20"
+            VerticalAlignment="Top"
+            Height="80"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Auto"
+            materialDesign:HintAssist.Hint="Question Text">
+        </TextBox>
+
+        <!-- CHOICES -->
+        <Grid
+            Grid.Row="2" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- CHOICE A -->
+            <TextBox
+                x:Name="ChoiceA"
+                Grid.Column="1" Grid.Row="1"
+                materialDesign:HintAssist.Hint="Choice A"
+                Margin="0 0 0 5"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+            </TextBox>
+            <RadioButton
+                x:Name="RadioButtonA"
+                Grid.Row="1" Grid.Column="2"
+                VerticalAlignment="Center"
+                Margin="10">
+                Correct
+            </RadioButton>
+
+            <!-- CHOICE B -->
+            <TextBox
+                x:Name="ChoiceB"
+                Grid.Column="1" Grid.Row="2"
+                materialDesign:HintAssist.Hint="Choice B"
+                VerticalAlignment="Bottom"
+                Margin="0 0 0 5"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+            </TextBox>
+            <RadioButton
+                x:Name="RadioButtonB"
+                Grid.Row="2" Grid.Column="2"
+                VerticalAlignment="Center"
+                Margin="10">
+                Correct
+            </RadioButton>
+
+            <!-- CHOICE C -->
+            <TextBox
+                x:Name="ChoiceC"
+                Grid.Column="1" Grid.Row="3"
+                materialDesign:HintAssist.Hint="Choice C"
+                VerticalAlignment="Bottom"
+                Margin="0 0 0 5"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+            </TextBox>
+            <RadioButton
+                x:Name="RadioButtonC"
+                Grid.Row="3" Grid.Column="2"
+                VerticalAlignment="Center"
+                Margin="10">
+                Correct
+            </RadioButton>
+
+            <!-- CHOICE D -->
+            <TextBox
+                x:Name="ChoiceD"
+                Grid.Column="1" Grid.Row="4"
+                materialDesign:HintAssist.Hint="Choice D"
+                VerticalAlignment="Bottom"
+                Margin="0 0 0 10"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+            </TextBox>
+            <RadioButton
+                x:Name="RadioButtonD"
+                Grid.Row="4" Grid.Column="2"
+                VerticalAlignment="Center"
+                Margin="10">
+                Correct
+            </RadioButton>
+        </Grid>
+
+        <!-- POINTS -->
+        <Slider
+            x:Name="Points"
+            Grid.Row="3" Grid.Column="2"
+            Margin="0 0 0 20"
+            Minimum="1"
+            Maximum="15"
+            Style="{StaticResource MaterialDesignDiscreteSlider}"
+            ToolTip="MaterialDesignDiscreteSlider"
+            Value="50">
+        </Slider>
+
+        <!-- BUTTONS -->
+        <Grid
+            Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+            HorizontalAlignment="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button 
+                Grid.Column="2"
+                Margin="10 0 5 0"
+                Click="Save_Click">
+                SAVE
+            </Button>
+            <Button 
+                Grid.Column="1"
+                Margin="10 0 0 0"
+                Click="SaveAddAnother_Click">
+                SAVE AND ADD ANOTHER
+            </Button>
+            <Button 
+                Grid.Column="0" Click="Cancel_Click">
+                CANCEL
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
