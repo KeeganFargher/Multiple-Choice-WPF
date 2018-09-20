@@ -1,0 +1,68 @@
+﻿<Window x:Class="MultipleChoiceUI.SubmitTestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:MultipleChoiceUI"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="16"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Height="150" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" WindowStyle="None" Closing="Window_Closing" Topmost="True" BorderThickness="1" BorderBrush="{DynamicResource PrimaryHueMidBrush}" Loaded="Window_Loaded">
+
+    <!-- Creates a dialog to ask which test they want to use -->
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Style="{DynamicResource MaterialDesignTitleTextBlock}">
+            Give Your Test a Name
+        </TextBlock>
+
+        <TextBox x:Name="TestName" 
+                 Grid.Row="1"
+                 HorizontalAlignment="Stretch" TextChanged="TestName_TextChanged">
+        </TextBox>
+
+        <Grid Grid.Row="2" HorizontalAlignment="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- ACCEPT -->
+            <Button x:Name="Accept" 
+                    Grid.Column="0"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    IsDefault="True"
+                    IsEnabled="false"
+                    Click="ButtonAccept_Click">
+                <Button.CommandParameter>
+                    <system:Boolean>True</system:Boolean>
+                </Button.CommandParameter>
+                ACCEPT
+            </Button>
+
+            <!-- CANCEL -->
+            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                    x:Name="Cancel"
+                    Grid.Column="1"
+                    IsCancel="True" Click="Cancel_Click">
+                <Button.CommandParameter>
+                    <system:Boolean>False</system:Boolean>
+                </Button.CommandParameter>
+                CANCEL
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

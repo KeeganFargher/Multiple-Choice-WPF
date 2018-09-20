@@ -49,6 +49,9 @@ namespace MultipleChoiceUI
             }
         }
 
+        /// <summary>
+        /// Displays a dialog to edit / create a new question
+        /// </summary>
         private void AddQuestion_Click(object sender, RoutedEventArgs e)
         {
             EditQuestionWindow editQuestion = new EditQuestionWindow(_testId);
@@ -60,9 +63,24 @@ namespace MultipleChoiceUI
             RefreshQuestions();
         }
 
+        /// <summary>
+        /// Submits the completed test
+        /// </summary>
         private void SubmitTest_Click(object sender, RoutedEventArgs e)
         {
+            SubmitTestWindow submitTest = new SubmitTestWindow();
+            submitTest.SelectedTestName = TestController.GetTestName(_testId);
+            submitTest.Owner = this;
+            Effect = Utility.Blur;
+            submitTest.ShowDialog();
 
+            if (submitTest.DialogResult == true)
+            {
+                TestController.SetTestName(_testId, submitTest.SelectedTestName);
+                LectureMenuWindow lectureMenu = new LectureMenuWindow();
+                lectureMenu.Show();
+                Close();
+            }
         }
 
         /// <summary>
