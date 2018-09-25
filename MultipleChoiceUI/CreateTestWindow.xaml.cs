@@ -27,6 +27,7 @@ namespace MultipleChoiceUI
         {
             InitializeComponent();
             _testId = testId;
+            TestName.Text = $"Test Name: {TestController.GetTestName(_testId)}";
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -39,6 +40,7 @@ namespace MultipleChoiceUI
         /// </summary>
         private void RefreshQuestions()
         {
+            TestTotal.Text = $"Test Total: {TestController.GetTotalMarks(_testId)}";
             StackPanel.Children.Clear();
 
             var questions = TestController.GetQuestions(_testId);

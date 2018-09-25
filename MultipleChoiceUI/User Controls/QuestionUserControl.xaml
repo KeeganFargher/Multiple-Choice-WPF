@@ -10,7 +10,7 @@
              TextOptions.TextFormattingMode="Ideal" 
              TextOptions.TextRenderingMode="Auto"        
              FontFamily="{DynamicResource MaterialDesignFont}"
-             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="100">
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600">
 
     <Grid Margin="0 0 0 20">
         <materialDesign:Card>
@@ -88,38 +88,42 @@
                         </Grid.ColumnDefinitions>
 
                         <RadioButton
-                        x:Name="ChoiceA"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        Margin="10"
-                        Style="{DynamicResource MaterialDesignRadioButton}">
+                            x:Name="ChoiceA"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            IsEnabled="false"
+                            Style="{DynamicResource MaterialDesignRadioButton}">
                             A. Communications software
                         </RadioButton>
 
                         <RadioButton
-                        x:Name="ChoiceB"
-                        Grid.Row="1"
-                        Grid.Column="2"
-                        Margin="10"
-                        Style="{DynamicResource MaterialDesignRadioButton}">
+                            x:Name="ChoiceB"
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            IsEnabled="false"
+                            Margin="10"
+                            Style="{DynamicResource MaterialDesignRadioButton}">
                             A. Communications software
                         </RadioButton>
 
                         <RadioButton
-                        x:Name="ChoiceC"
-                        Grid.Row="2"
-                        Grid.Column="1"
-                        Margin="10"
-                        Style="{DynamicResource MaterialDesignRadioButton}">
+                            x:Name="ChoiceC"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            IsEnabled="false"
+                            Margin="10"
+                            Style="{DynamicResource MaterialDesignRadioButton}">
                             A. Communications software
                         </RadioButton>
 
                         <RadioButton
-                        x:Name="ChoiceD"
-                        Grid.Row="2"
-                        Grid.Column="2"
-                        Margin="10"
-                        Style="{DynamicResource MaterialDesignRadioButton}">
+                            x:Name="ChoiceD"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            IsEnabled="false"
+                            Margin="10"
+                            Style="{DynamicResource MaterialDesignRadioButton}">
                             A. Communications software
                         </RadioButton>
                     </Grid>

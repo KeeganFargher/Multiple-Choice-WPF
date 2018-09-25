@@ -104,6 +104,7 @@
                 <!-- CHOICES -->
                 <RadioButton
                     x:Name="ChoiceA"
+                    IsChecked="true"
                     Grid.Row="3" Grid.Column="0"
                     Margin="0 0 0 15"
                     Style="{DynamicResource MaterialDesignRadioButton}" 
@@ -155,13 +156,13 @@
                 x:Name="Previous"
                 Margin="20 0 110 0"
                 Grid.Column="0" Click="Previous_Click">
-                Previous
+                PREVIOUS
             </Button>
             <Button
                 x:Name="Next"
                 Margin="110 0 20 0"
                 Grid.Column="1" Click="Next_Click">
-                Next
+                NEXT
             </Button>
             <Button
                 x:Name="Submit"
