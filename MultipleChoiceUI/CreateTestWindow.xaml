@@ -28,26 +28,23 @@
                 Mode="PrimaryMid">
                 <Grid>
                     <Rectangle 
-                        Height="60" 
+                        Height="80" 
                         VerticalAlignment="Top"/>
                     <TextBlock 
+                        Margin="0 0 0 10"
+                        x:Name="Heading"
                         Style="{DynamicResource MaterialDesignDisplay1TextBlock}"     
                         VerticalAlignment="Center" 
-                        HorizontalAlignment="Center">Create / Edit Test
+                        HorizontalAlignment="Center">
+                        Create New Test
                     </TextBlock>
                     <TextBlock 
-                        x:Name="TestName"
-                        Style="{DynamicResource MaterialDesignSubheadingTextBlock}" 
-                        Margin="110 20 20 10"
-                        VerticalAlignment="Bottom" 
-                        HorizontalAlignment="Left">Test Name: Not Set
-                    </TextBlock>
-                    <TextBlock 
+                        Margin="0 0 0 5"
                         x:Name="TestTotal"
-                        Style="{DynamicResource MaterialDesignSubheadingTextBlock}" 
-                        Margin="10 20 5 10"
+                        Style="{DynamicResource MaterialDesignTitleTextBlock}"     
                         VerticalAlignment="Bottom" 
-                        HorizontalAlignment="Left">Test Total: 40
+                        HorizontalAlignment="Center">
+                        Total Marks: 0
                     </TextBlock>
                 </Grid>
             </materialDesign:ColorZone>

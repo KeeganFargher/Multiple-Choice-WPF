@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MultipleChoiceLibrary;
 
 namespace MultipleChoiceUI
@@ -19,53 +10,57 @@ namespace MultipleChoiceUI
     /// <summary>
     /// Interaction logic for EditQuestionWindow.xaml
     /// </summary>
-    public partial class EditQuestionWindow : Window
+    public partial class EditQuestionWindow
     {
-        private readonly int questionID;
-        private readonly int testID;
+        private readonly int _questionId;
+
+        private readonly int _testId;
 
         //  Whether we are editing or creating a new question
-        private bool isEditMode = false;
+        private bool _isEditMode;
 
-        List<RadioButton> radioButtons;
+        List<RadioButton> _radioButtons;
 
         //  New question
-        public EditQuestionWindow(int testID)
+        public EditQuestionWindow(int testId)
         {
             InitializeComponent();
 
-            this.testID = testID;
+            _testId = testId;
             InitRadioButtons();
         }
 
         //  Edit a previously created question
-        public EditQuestionWindow(int testID, int questionID)
+        public EditQuestionWindow(int testId, int questionId)
         {
             InitializeComponent();
 
-            this.testID = testID;
-            this.questionID = questionID;
+            _testId = testId;
+            _questionId = questionId;
             InitRadioButtons();
-            isEditMode = true;
+            _isEditMode = true;
             PopulateText();
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (isEditMode)
-            {
-                SaveEditedChanges();
-            }
-            else
-            {
-                SubmitNewQuestion();
-            }
+            SubmitChanges();
             Close();
         }
 
         private void SaveAddAnother_Click(object sender, RoutedEventArgs e)
         {
-            if (isEditMode)
+            SubmitChanges();
+            ClearFields();
+            _isEditMode = false;
+        }
+
+        /// <summary>
+        /// Submits the changes made
+        /// </summary>
+        private void SubmitChanges()
+        {
+            if (_isEditMode)
             {
                 SaveEditedChanges();
             }
@@ -73,8 +68,6 @@ namespace MultipleChoiceUI
             {
                 SubmitNewQuestion();
             }
-            ClearFields();
-            isEditMode = false;
         }
 
         /// <summary>
@@ -83,20 +76,20 @@ namespace MultipleChoiceUI
         private void SaveEditedChanges()
         {
             //  Save question text
-            TestController.SetQuestionText(questionID, testID, QuestionText.Text);
+            TestController.SetQuestionText(_questionId, _testId, QuestionText.Text);
 
             //  Save choices
-            TestController.SetChoiceA(questionID, testID, ChoiceA.Text);
-            TestController.SetChoiceB(questionID, testID, ChoiceB.Text);
-            TestController.SetChoiceC(questionID, testID, ChoiceC.Text);
-            TestController.SetChoiceD(questionID, testID, ChoiceD.Text);
+            TestController.SetChoiceA(_questionId, _testId, ChoiceA.Text);
+            TestController.SetChoiceB(_questionId, _testId, ChoiceB.Text);
+            TestController.SetChoiceC(_questionId, _testId, ChoiceC.Text);
+            TestController.SetChoiceD(_questionId, _testId, ChoiceD.Text);
 
             //  Save the correct answer
-            int index = radioButtons.IndexOf(radioButtons.FirstOrDefault(x => x.IsChecked == true));
-            TestController.SetAnswer(questionID, testID, index);
+            int index = _radioButtons.IndexOf(_radioButtons.FirstOrDefault(x => x.IsChecked == true));
+            TestController.SetAnswer(_questionId, _testId, index);
 
             //  Save how many points the question is worth
-            TestController.SetPoints(questionID, testID, (int)Points.Value);
+            TestController.SetPoints(_questionId, _testId, (int)Points.Value);
         }
 
         /// <summary>
@@ -104,7 +97,7 @@ namespace MultipleChoiceUI
         /// </summary>
         private void SubmitNewQuestion()
         {
-            int answerIndex = radioButtons.IndexOf(radioButtons.FirstOrDefault(x => x.IsChecked == true));
+            int answerIndex = _radioButtons.IndexOf(_radioButtons.FirstOrDefault(x => x.IsChecked == true));
 
             Question question = new Question
             {
@@ -117,7 +110,7 @@ namespace MultipleChoiceUI
                 Points = (int)Points.Value
             };
 
-            TestController.AddQuestion(question, testID);
+            TestController.AddQuestion(question, _testId);
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -128,12 +121,13 @@ namespace MultipleChoiceUI
         private void EditQuestionWindow_OnClosing(object sender, CancelEventArgs e)
         {
             Owner.Effect = null;
+            Owner.Opacity = 1;
         }
 
         private void PopulateText()
         {
             //  Retrieve the question
-            Question question = TestController.GetQuestion(testID, questionID);
+            Question question = TestController.GetQuestion(_testId, _questionId);
 
             //  Set the question text
             QuestionText.Text = question.Question_Text;
@@ -145,7 +139,7 @@ namespace MultipleChoiceUI
             ChoiceD.Text = question.ChoiceD;
             
             //  Check the correct answer
-            radioButtons[question.Answer].IsChecked = true;
+            _radioButtons[question.Answer].IsChecked = true;
 
             Points.Value = question.Points;
         }
@@ -153,7 +147,7 @@ namespace MultipleChoiceUI
         //  Initializes the radio buttons
         private void InitRadioButtons()
         {
-            radioButtons = new List<RadioButton>()
+            _radioButtons = new List<RadioButton>()
             {
                 RadioButtonA,
                 RadioButtonB,
@@ -170,7 +164,7 @@ namespace MultipleChoiceUI
             ChoiceB.Text = "";
             ChoiceC.Text = "";
             ChoiceD.Text = "";
-            radioButtons[0].IsChecked = true;
+            _radioButtons[0].IsChecked = true;
             Points.Value = Points.Minimum;
         }
     }

@@ -14,7 +14,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="LectureMenuWindow" Height="645" Width="660" WindowStartupLocation="CenterScreen">
+        Title="Lecture Main Menu" Height="645" Width="660" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -68,28 +68,28 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <userControls:MenuCardUserControl ButtonDescriptionText="Create New Test" 
+            <userControls:MenuCardUserControl ButtonDescriptionText="CREATE NEW TEST" 
                                        IconName="Pencil"
                                        ButtonDescriptionClick="CreateTest_Click"
                                        Grid.Row="1" 
                                        Grid.Column="1" 
                                        Margin="0"/>
 
-            <userControls:MenuCardUserControl ButtonDescriptionText="Edit Test" 
+            <userControls:MenuCardUserControl ButtonDescriptionText="EDIT TEST" 
                                        IconName="BookOpenVariant"
                                        ButtonDescriptionClick="EditTest_Click"
                                        Grid.Row="1" 
                                        Grid.Column="2" 
                                        Margin="0"/>
 
-            <userControls:MenuCardUserControl ButtonDescriptionText="Edit Users" 
+            <userControls:MenuCardUserControl ButtonDescriptionText="EDIT USERS" 
                                        IconName="Face"
                                        ButtonDescriptionClick="EditUsers_Click"
                                        Grid.Row="2" 
                                        Grid.Column="1"
                                        Margin="0"/>
 
-            <userControls:MenuCardUserControl ButtonDescriptionText="Logout" 
+            <userControls:MenuCardUserControl ButtonDescriptionText="LOGOUT" 
                                        IconName="Logout"
                                        ButtonDescriptionClick="Logout_Click"
                                        Grid.Row="2" 

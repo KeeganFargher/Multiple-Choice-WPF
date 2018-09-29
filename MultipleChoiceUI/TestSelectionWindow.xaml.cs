@@ -16,6 +16,10 @@ namespace MultipleChoiceUI
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Populates the combo box with a list of tests
+        /// </summary>
+        /// <param name="tests">The list of tests to populate the combo box with</param>
         public void PopulateComboBox(List<Test> tests)
         {
             ComboBoxItems.Items.Clear();

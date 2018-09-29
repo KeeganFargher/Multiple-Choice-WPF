@@ -19,7 +19,7 @@ namespace MultipleChoiceUI.User_Controls
     /// <summary>
     /// Interaction logic for MenuCardUserControl.xaml
     /// </summary>
-    public partial class MenuCardUserControl : UserControl
+    public partial class MenuCardUserControl
     {
         public MenuCardUserControl()
         {
@@ -28,13 +28,11 @@ namespace MultipleChoiceUI.User_Controls
 
         public string ButtonDescriptionText
         {
-            get => ButtonDescription.Content.ToString();
             set => ButtonDescription.Content = value;
         }
 
         public PackIconKind IconName
         {
-            get => Icon.Kind;
             set => Icon.Kind = value;
         }
 

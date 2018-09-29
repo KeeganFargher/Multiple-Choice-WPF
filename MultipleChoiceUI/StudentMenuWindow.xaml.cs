@@ -1,18 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Effects;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using MaterialDesignThemes.Wpf;
+﻿using System.Windows;
 using MultipleChoiceLibrary;
 
 namespace MultipleChoiceUI
@@ -22,7 +8,6 @@ namespace MultipleChoiceUI
     /// </summary>
     public partial class StudentMenuWindow
     {
-
         private readonly int _userId;
 
         public StudentMenuWindow(int userId)
@@ -47,12 +32,11 @@ namespace MultipleChoiceUI
             Effect = Utility.Blur;
             testSelection.ShowDialog();
 
-            if (testSelection.DialogResult == true)
-            {
-                TestWindow test = new TestWindow(_userId, testSelection.SelectedValue);
-                test.Show();
-                Close();
-            }
+            //  Open the test window
+            if (testSelection.DialogResult != true) return;
+            TestWindow test = new TestWindow(_userId, testSelection.SelectedValue);
+            test.Show();
+            Close();
         }
 
         private async void ButtonViewMemo_Click(object sender, RoutedEventArgs e)
@@ -66,12 +50,11 @@ namespace MultipleChoiceUI
             Effect = Utility.Blur;
             testSelection.ShowDialog();
 
-            if (testSelection.DialogResult == true)
-            {
-                MemoWindow memo = new MemoWindow(testSelection.SelectedValue, _userId);
-                memo.Show();
-                Close();
-            }
+            //  Display the memo
+            if (testSelection.DialogResult != true) return;
+            MemoWindow memo = new MemoWindow(testSelection.SelectedValue, _userId);
+            memo.Show();
+            Close();
         }
 
         private void ButtonEditProfile_Click(object sender, RoutedEventArgs e)

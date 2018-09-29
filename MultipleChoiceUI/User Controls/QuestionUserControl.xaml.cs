@@ -23,20 +23,19 @@ namespace MultipleChoiceUI.User_Controls
             //if (question.Points > 1) { Points.Text += "s"; }
 
             //Question.Text = question.Question_Text;
-            ChoiceA.Content = $"A. \t{question.ChoiceA}";
-            ChoiceB.Content = $"B. \t{question.ChoiceB}";
-            ChoiceC.Content = $"C. \t{question.ChoiceC}";
-            ChoiceD.Content = $"D. \t{question.ChoiceD}";
+            ChoiceA.Text = $"A. \t{question.ChoiceA}";
+            ChoiceB.Text = $"B. \t{question.ChoiceB}";
+            ChoiceC.Text = $"C. \t{question.ChoiceC}";
+            ChoiceD.Text = $"D. \t{question.ChoiceD}";
 
-            List<RadioButton> radioButtons = new List<RadioButton>()
+            var radioButtons = new List<TextBlock>()
             {
                 ChoiceA,
                 ChoiceB,
                 ChoiceC,
                 ChoiceD
             };
-            radioButtons[question.Answer].IsChecked = true;
-
+            radioButtons[question.Answer].Background = Utility.CorrectAnswer;
         }
     }
 }

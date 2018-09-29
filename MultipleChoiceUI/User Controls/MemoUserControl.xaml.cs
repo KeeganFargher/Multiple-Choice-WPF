@@ -34,7 +34,7 @@ namespace MultipleChoiceUI.User_Controls
         /// <param name="userAnswer">The user's answer</param>
         public void HighlightAnswers(int correctAnswer, int userAnswer)
         {
-            List<TextBlock> choices = new List<TextBlock>
+            var choices = new List<TextBlock>
             {
                 ChoiceA, ChoiceB, ChoiceC, ChoiceD
             };

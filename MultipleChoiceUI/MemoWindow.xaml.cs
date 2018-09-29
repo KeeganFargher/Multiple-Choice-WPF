@@ -33,6 +33,9 @@ namespace MultipleChoiceUI
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //  Display mark
+            Mark.Text = $"Mark: {StudentController.GetMark(_userId, _testId)} / {TestController.GetTotalMarks(_testId)}";
+
             //  Get the test name and questions
             TestName.Text = TestController.GetTestName(_testId);
             var questions = TestController.GetQuestions(_testId);

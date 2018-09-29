@@ -18,6 +18,7 @@
                 x:Name="Expander"
                 HorizontalAlignment="Stretch"
                 IsExpanded="false">
+
                 <!-- HEADER SETTINGS -->
                 <Expander.Header>
                     <Grid>
@@ -33,7 +34,7 @@
                         Grid.Column="0"
                         VerticalAlignment="Center"
                         Style="{DynamicResource MaterialDesignTitleTextBlock}">
-                        <Bold>Q.1</Bold> The brain of any computer system is...
+                        Q.1 The brain of any computer system is...
                         </TextBlock>
 
                         <!-- EDIT BUTTON -->
@@ -87,45 +88,47 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <RadioButton
+                        <!-- CHOICE A -->
+                        <TextBlock
                             x:Name="ChoiceA"
                             Grid.Row="1"
                             Grid.Column="1"
                             Margin="10"
-                            IsEnabled="false"
-                            Style="{DynamicResource MaterialDesignRadioButton}">
+                            Padding="10">
                             A. Communications software
-                        </RadioButton>
+                        </TextBlock>
 
-                        <RadioButton
+                        <!-- CHOICE B -->
+                        <TextBlock
                             x:Name="ChoiceB"
                             Grid.Row="1"
                             Grid.Column="2"
-                            IsEnabled="false"
                             Margin="10"
-                            Style="{DynamicResource MaterialDesignRadioButton}">
+                            Padding="10">
                             A. Communications software
-                        </RadioButton>
+                        </TextBlock>
 
-                        <RadioButton
+                        <!-- CHOICE C -->
+                        <TextBlock
                             x:Name="ChoiceC"
                             Grid.Row="2"
                             Grid.Column="1"
                             IsEnabled="false"
                             Margin="10"
-                            Style="{DynamicResource MaterialDesignRadioButton}">
+                            Padding="10">
                             A. Communications software
-                        </RadioButton>
+                        </TextBlock>
 
-                        <RadioButton
+                        <!-- CHOICE D -->
+                        <TextBlock
                             x:Name="ChoiceD"
                             Grid.Row="2"
                             Grid.Column="2"
                             IsEnabled="false"
                             Margin="10"
-                            Style="{DynamicResource MaterialDesignRadioButton}">
+                            Padding="10">
                             A. Communications software
-                        </RadioButton>
+                        </TextBlock>
                     </Grid>
                 </Grid>
             </Expander>

@@ -68,28 +68,28 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <userControls:MenuCardUserControl ButtonDescriptionText="Begin Test" 
+            <userControls:MenuCardUserControl ButtonDescriptionText="BEGIN TEST" 
                                        IconName="Pencil"
                                        ButtonDescriptionClick="ButtonStartTest_Click"
                                        Grid.Row="1" 
                                        Grid.Column="1" 
                                        Margin="0"/>
 
-            <userControls:MenuCardUserControl ButtonDescriptionText="View Memo" 
+            <userControls:MenuCardUserControl ButtonDescriptionText="VIEW MEMO" 
                                        IconName="BookOpenVariant"
                                        ButtonDescriptionClick="ButtonViewMemo_Click"
                                        Grid.Row="1" 
                                        Grid.Column="2" 
                                        Margin="0"/>
 
-            <userControls:MenuCardUserControl ButtonDescriptionText="Edit Profile" 
+            <userControls:MenuCardUserControl ButtonDescriptionText="EDIT PROFILE" 
                                        IconName="AccountEdit"
                                        ButtonDescriptionClick="ButtonEditProfile_Click"
                                        Grid.Row="2" 
                                        Grid.Column="1"
                                        Margin="0"/>
 
-            <userControls:MenuCardUserControl ButtonDescriptionText="Logout" 
+            <userControls:MenuCardUserControl ButtonDescriptionText="LOGOUT" 
                                        IconName="Logout"
                                        ButtonDescriptionClick="ButtonLogout_Click"
                                        Grid.Row="2" 

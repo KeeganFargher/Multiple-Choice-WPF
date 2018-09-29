@@ -27,7 +27,8 @@ namespace MultipleChoiceUI
         {
             InitializeComponent();
             _testId = testId;
-            TestName.Text = $"Test Name: {TestController.GetTestName(_testId)}";
+            Heading.Text = $"{TestController.GetTestName(_testId)}";
+            TestTotal.Text = $"Total Marks: {TestController.GetTotalMarks(_testId)}";
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -40,7 +41,7 @@ namespace MultipleChoiceUI
         /// </summary>
         private void RefreshQuestions()
         {
-            TestTotal.Text = $"Test Total: {TestController.GetTotalMarks(_testId)}";
+            TestTotal.Text = $"Total Marks: {TestController.GetTotalMarks(_testId)}";
             StackPanel.Children.Clear();
 
             var questions = TestController.GetQuestions(_testId);
@@ -56,11 +57,13 @@ namespace MultipleChoiceUI
         /// </summary>
         private void AddQuestion_Click(object sender, RoutedEventArgs e)
         {
-            EditQuestionWindow editQuestion = new EditQuestionWindow(_testId);
-            editQuestion.Owner = this;
-            editQuestion.Effect = Utility.DropShadowEffect;
+            EditQuestionWindow editQuestion = new EditQuestionWindow(_testId)
+            {
+                Owner = this,
+            };
 
             Effect = Utility.Blur;
+            Opacity = 0.5;
             editQuestion.ShowDialog();
             RefreshQuestions();
         }
@@ -70,9 +73,11 @@ namespace MultipleChoiceUI
         /// </summary>
         private void SubmitTest_Click(object sender, RoutedEventArgs e)
         {
-            SubmitTestWindow submitTest = new SubmitTestWindow();
-            submitTest.SelectedTestName = TestController.GetTestName(_testId);
-            submitTest.Owner = this;
+            SubmitTestWindow submitTest = new SubmitTestWindow
+            {
+                SelectedTestName = TestController.GetTestName(_testId),
+                Owner = this
+            };
             Effect = Utility.Blur;
             submitTest.ShowDialog();
 
@@ -108,7 +113,7 @@ namespace MultipleChoiceUI
         }
 
         /// <summary>
-        /// Called when the edit button is clicked
+        /// Called when any edit button is clicked
         /// </summary>
         private void Button_Click_Edit(object sender, EventArgs e)
         {
@@ -121,7 +126,7 @@ namespace MultipleChoiceUI
         }
 
         /// <summary>
-        /// Called when the delete button is clicked
+        /// Called when any delete button is clicked
         /// </summary>
         private void Button_Click_Delete(object sender, EventArgs e)
         {
@@ -155,6 +160,9 @@ namespace MultipleChoiceUI
             RefreshQuestions();
         }
 
+        /// <summary>
+        /// Expands all the questions
+        /// </summary>
         private void ExpandAll_Click(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < StackPanel.Children.Count; i++)
@@ -166,6 +174,9 @@ namespace MultipleChoiceUI
             }
         }
 
+        /// <summary>
+        /// Collapses all the questions
+        /// </summary>
         private void CollapseAll_Click(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < StackPanel.Children.Count; i++)

@@ -163,7 +163,7 @@
             Minimum="1"
             Maximum="15"
             Style="{StaticResource MaterialDesignDiscreteSlider}"
-            ToolTip="MaterialDesignDiscreteSlider"
+            ToolTip="How many points the question is worth"
             Value="50">
         </Slider>
 
