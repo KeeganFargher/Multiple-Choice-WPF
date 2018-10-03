@@ -66,7 +66,9 @@ namespace MultipleChoiceUI
 
         private void ButtonLogout_Click(object sender, RoutedEventArgs e)
         {
-
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            Close();
         }
     }
 }

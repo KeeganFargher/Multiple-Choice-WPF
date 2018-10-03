@@ -39,14 +39,16 @@ namespace MultipleChoiceUI
             }
         }
 
-        private void EditUsers_Click(object sender, RoutedEventArgs e)
+        private void ViewMarks_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
-
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            Close();
         }
     }
 }

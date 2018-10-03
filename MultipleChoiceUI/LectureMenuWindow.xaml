@@ -82,9 +82,9 @@
                                        Grid.Column="2" 
                                        Margin="0"/>
 
-            <userControls:MenuCardUserControl ButtonDescriptionText="EDIT USERS" 
-                                       IconName="Face"
-                                       ButtonDescriptionClick="EditUsers_Click"
+            <userControls:MenuCardUserControl ButtonDescriptionText="VIEW MARKS" 
+                                       IconName="EmoticonSad"
+                                       ButtonDescriptionClick="ViewMarks_Click"
                                        Grid.Row="2" 
                                        Grid.Column="1"
                                        Margin="0"/>
