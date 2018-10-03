@@ -59,7 +59,9 @@ namespace MultipleChoiceUI
 
         private void ButtonEditProfile_Click(object sender, RoutedEventArgs e)
         {
-
+            EditProfileWindow editProfileWindow = new EditProfileWindow(_userId);
+            editProfileWindow.Show();
+            Close();
         }
 
         private void ButtonLogout_Click(object sender, RoutedEventArgs e)

@@ -85,6 +85,9 @@
     <Compile Include="CreateTestWindow.xaml.cs">
       <DependentUpon>CreateTestWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditProfileWindow.xaml.cs">
+      <DependentUpon>EditProfileWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditQuestionWindow.xaml.cs">
       <DependentUpon>EditQuestionWindow.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
     </Compile>
     <Compile Include="Utility.cs" />
     <Page Include="CreateTestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditProfileWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
