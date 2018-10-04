@@ -44,6 +44,7 @@
                         Lecture Main Menu
                     </TextBlock>
                     <TextBlock Padding="10 0 0 10" 
+                               x:Name="Welcome"
                                Style="{DynamicResource MaterialDesignSubheadingTextBlock}"
                                HorizontalAlignment="Left" 
                                VerticalAlignment="Bottom">

@@ -12,21 +12,24 @@ namespace MultipleChoiceUI
     public partial class CreateTestWindow
     {
         private readonly int _testId;
+        private int _userId;
 
-        public CreateTestWindow()
+        public CreateTestWindow(int userId)
         {
             InitializeComponent();
 
             Test test = new Test { Name = "" };
             TestController.AddTest(test);
             _testId = test.Test_ID;
+            _userId = userId;
         }
 
         //  If we are editing a test we need the test ID
-        public CreateTestWindow(int testId)
+        public CreateTestWindow(int testId, int userId)
         {
             InitializeComponent();
             _testId = testId;
+            _userId = userId;
             Heading.Text = $"{TestController.GetTestName(_testId)}";
             TestTotal.Text = $"Total Marks: {TestController.GetTotalMarks(_testId)}";
         }
@@ -73,6 +76,12 @@ namespace MultipleChoiceUI
         /// </summary>
         private void SubmitTest_Click(object sender, RoutedEventArgs e)
         {
+            if (TestController.GetQuestions(_testId).Count == 0)
+            {
+                MessageBox.Show("Please have at least 1 question");
+                return;
+            }
+
             SubmitTestWindow submitTest = new SubmitTestWindow
             {
                 SelectedTestName = TestController.GetTestName(_testId),
@@ -84,7 +93,7 @@ namespace MultipleChoiceUI
             if (submitTest.DialogResult == true)
             {
                 TestController.SetTestName(_testId, submitTest.SelectedTestName);
-                LectureMenuWindow lectureMenu = new LectureMenuWindow();
+                LectureMenuWindow lectureMenu = new LectureMenuWindow(_userId);
                 lectureMenu.Show();
                 Close();
             }

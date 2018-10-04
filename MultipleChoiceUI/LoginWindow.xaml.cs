@@ -36,7 +36,7 @@ namespace MultipleChoiceUI
                     }
                 case "Lecture":
                     {
-                        LectureMenuWindow lectureMenu = new LectureMenuWindow();
+                        LectureMenuWindow lectureMenu = new LectureMenuWindow(user.User_ID);
                         lectureMenu.Show();
                         Close();
                         break;

@@ -14,6 +14,7 @@ namespace MultipleChoiceUI
         {
             InitializeComponent();
             _userId = userId;
+            Welcome.Text = $"Welcome {UserController.GetFirstName(_userId)}!";
         }
 
         public StudentMenuWindow()

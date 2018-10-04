@@ -97,6 +97,7 @@
             </TextBox>
             <RadioButton
                 x:Name="RadioButtonA"
+                IsChecked="True"
                 Grid.Row="1" Grid.Column="2"
                 VerticalAlignment="Center"
                 Margin="10">

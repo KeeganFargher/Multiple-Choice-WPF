@@ -61,9 +61,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -94,6 +91,11 @@
     <Compile Include="LectureMenuWindow.xaml.cs">
       <DependentUpon>LectureMenuWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Properties\DataSources\DataSetMark.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMark.xsd</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\MemoUserControl.xaml.cs">
       <DependentUpon>MemoUserControl.xaml</DependentUpon>
     </Compile>
@@ -119,6 +121,9 @@
       <DependentUpon>SubmitTestWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility.cs" />
+    <Compile Include="ViewMarksWindow.xaml.cs">
+      <DependentUpon>ViewMarksWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="CreateTestWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -179,6 +184,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewMarksWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -199,6 +208,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DataSetMark.xsc">
+      <DependentUpon>DataSetMark.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\DataSetMark.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMark.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\DataSources\DataSetMark.xss">
+      <DependentUpon>DataSetMark.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -213,5 +233,6 @@
       <Name>MultipleChoiceLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

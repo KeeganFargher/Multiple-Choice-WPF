@@ -44,12 +44,22 @@ namespace MultipleChoiceUI
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            if (AreEmptyFields())
+            {
+                MessageBox.Show("Please ensure no fields are empty");
+                return;
+            }
             SubmitChanges();
             Close();
         }
 
         private void SaveAddAnother_Click(object sender, RoutedEventArgs e)
         {
+            if (AreEmptyFields())
+            {
+                MessageBox.Show("Please ensure no fields are empty");
+                return;
+            }
             SubmitChanges();
             ClearFields();
             _isEditMode = false;
@@ -166,6 +176,15 @@ namespace MultipleChoiceUI
             ChoiceD.Text = "";
             _radioButtons[0].IsChecked = true;
             Points.Value = Points.Minimum;
+        }
+
+        private bool AreEmptyFields()
+        {
+            return QuestionText.Text == "" ||
+                   ChoiceA.Text == "" ||
+                   ChoiceB.Text == "" ||
+                   ChoiceC.Text == "" ||
+                   ChoiceD.Text == "";
         }
     }
 }
